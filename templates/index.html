@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Route</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Weather Route Forecast</h1>
+        <form method="POST" class="my-4">
+            <div class="mb-3">
+                <label for="start_city" class="form-label">Start City</label>
+                <input type="text" class="form-control" id="start_city" name="start_city" required>
+            </div>
+            <div class="mb-3">
+                <label for="end_city" class="form-label">End City</label>
+                <input type="text" class="form-control" id="end_city" name="end_city" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Forecast</button>
+        </form>
+
+        {% if error %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if start_forecast and end_forecast %}
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Forecast for {{ start_city }}</h3>
+                <ul class="list-group">
+                    {% for day in start_forecast %}
+                    <li class="list-group-item">
+                        {{ day.Date }}<br>
+                        Day: {{ day.Day.IconPhrase }}<br>
+                        Night: {{ day.Night.IconPhrase }}<br>
+                        Temp: {{ day.Temperature.Minimum.Value }}°C - {{ day.Temperature.Maximum.Value }}°C
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Forecast for {{ end_city }}</h3>
+                <ul class="list-group">
+                    {% for day in end_forecast %}
+                    <li class="list-group-item">
+                        {{ day.Date }}<br>
+                        Day: {{ day.Day.IconPhrase }}<br>
+                        Night: {{ day.Night.IconPhrase }}<br>
+                        Temp: {{ day.Temperature.Minimum.Value }}°C - {{ day.Temperature.Maximum.Value }}°C
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
