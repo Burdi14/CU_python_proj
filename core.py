@@ -22,7 +22,7 @@ def get_location_key(city: str) -> str:
     try:
         return data[0]['Key'], data[0]['LocalizedName']
     except:
-        raise ValueError("Location key whas not found")
+        raise ValueError("Location key was not found")
 
 #getting forecast for the next 5 days (only tempreture 'cause of Accuwather api)
 def get_5day_forecast(location_key: str):
