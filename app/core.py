@@ -3,8 +3,17 @@ import os
 from dotenv import load_dotenv
 import json
 
+class Cities:
+    def __init__(self):
+        self.start = ""
+        self.dest = ""
+        self.waypoints = []
+
+def cities():
+    return Cities()
+
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.getenv("API_KEY_WEATHER")
 
 #getting the location key from API function
 def get_location_key(city: str) -> str:
