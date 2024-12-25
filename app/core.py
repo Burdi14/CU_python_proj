@@ -3,14 +3,14 @@ import os
 from dotenv import load_dotenv
 import json
 
-class Cities:
+class Route():
     def __init__(self):
         self.start = ""
         self.dest = ""
         self.waypoints = []
 
-def cities():
-    return Cities()
+def route():
+    return Route()
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY_WEATHER")
