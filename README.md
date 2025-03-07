@@ -1,21 +1,21 @@
-#Route Weather Forecast Telegram Bot
+# Route Weather Forecast Telegram Bot
 This Telegram bot helps you plan your trip by providing a weather forecast for your route, including waypoints, over a specified period.
 
-##Features
+## Features
 
 Get the weather forecast for multiple locations along your route, including start, destination, and waypoints.
 Choose a forecast period of 1 to 4 days.
 View detailed weather information for each day, including minimum and maximum temperatures, and day and night weather conditions.
 Installation
 
-###1. Install Dependencies:
+### 1. Install Dependencies:
 
 This bot requires the following Python libraries, listed in requirements.txt:
 
 ```bash
 pip install -r requirements.txt
 ```
-###2. Environment Variables:
+### 2. Environment Variables:
 
 Create a .env file in your project directory and add the following variables:
 
