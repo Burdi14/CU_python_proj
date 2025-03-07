@@ -12,8 +12,9 @@ Installation
 
 This bot requires the following Python libraries, listed in requirements.txt:
 
-Bash
+```bash
 pip install -r requirements.txt
+```
 2. Environment Variables:
 
 Create a .env file in your project directory and add the following variables:
